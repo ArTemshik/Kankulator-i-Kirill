@@ -179,7 +179,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:backgroundTint="#FF5"
+                android:backgroundTint="#FF5722"
                 android:text=","
                 android:textSize="34sp" />
 
