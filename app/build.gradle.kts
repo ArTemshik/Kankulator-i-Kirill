@@ -1,16 +1,16 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    id("com.android.application") // Плагин для Android-приложений
+    id("org.jetbrains.kotlin.android") // Плагин для Kotlin
 }
 
 android {
-    namespace = "com.example.maykureskent"
-    compileSdk = 35
+    namespace = "com.example.calculator" // Замените на ваш namespace
+    compileSdk = 33 // Версия SDK для компиляции
 
     defaultConfig {
-        applicationId = "com.example.maykureskent"
-        minSdk = 24
-        targetSdk = 35
+        applicationId = "com.example.calculator" // Замените на ваш applicationId
+        minSdk = 21 // Минимальная версия SDK
+        targetSdk = 33 // Целевая версия SDK
         versionCode = 1
         versionName = "1.0"
 
@@ -26,23 +26,20 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.toVersion(8)
+        targetCompatibility = JavaVersion.toVersion(8)
     }
+
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
 }
 
 dependencies {
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    implementation("androidx.core:core-ktx:1.9.0") // Базовая библиотека Kotlin для Android
+    implementation("androidx.appcompat:appcompat:1.6.1") // Поддержка AppCompat
+    implementation("com.google.android.material:material:1.8.0") // Material Design
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4") // ConstraintLayout
 }
